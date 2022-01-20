@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost"]
 
+AUTH_USER_MODEL = 'accounts.User'
+
 
 # Application definition
 
@@ -37,7 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+    'rest_framework',
+    'knox',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
