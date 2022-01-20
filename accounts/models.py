@@ -1,6 +1,3 @@
-import email
-from operator import imod
-from statistics import mode
 from xml.parsers.expat import model
 from django.db import models
 from django.contrib.auth.base_user import BaseUserManager, AbstractBaseUser
